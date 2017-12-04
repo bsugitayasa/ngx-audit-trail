@@ -1,0 +1,26 @@
+server:
+  port: 8099
+  context-path: /ngx-audit-trail
+spring:
+  application:
+    name: audit-trail-mongo
+  datasource:
+    url: jdbc:mysql://localhost/ngx_ds?createDatabaseIfNotExist=true
+    username: root
+    password: admin123
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties: 
+      hibernate: 
+        format_sql: true
+  data:
+    mongodb:
+      host: 127.0.0.1
+      database: ngxaudittrail
+      port: 27017
+      repositories:
+        enabled: true
+      uri: mongodb://localhost:2701
